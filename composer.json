@@ -1,0 +1,12 @@
+{
+  "name": "antoniocarlosmjr/framework-mvc-php",
+  "description": "Framework MVC em PHP",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Antonio Carlos Martins Pereira Junior",
+      "email": "carlos12antoni@gmail.com"
+    }
+  ],
+  "require": {}
+}
