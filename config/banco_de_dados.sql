@@ -18,19 +18,25 @@ CREATE TABLE empresa (
     PRIMARY KEY(emp_id)
 );
 
-// TODO FAZER
--- CREATE TABLE pessoa (
---   psa_id INT(11) NOT NULL AUTO_INCREMENT,
---   psa_nome VARCHAR(150) NOT NULL,
---   psa_cpf VARCHAR(11) NOT NULL,
---   psa_data_nascimento DATE NOT NULL,
---   PRIMARY KEY(psa_id)
--- );
---
--- CREATE TABLE cargo (
---   psa_id INT(11) NOT NULL AUTO_INCREMENT,
---   psa_nome VARCHAR(150) NOT NULL,
---   psa_cpf VARCHAR(11) NOT NULL,
---   psa_data_nascimento DATE NOT NULL,
---   PRIMARY KEY(psa_id)
--- );
+CREATE TABLE cargo (
+    car_id INT(11) NOT NULL AUTO_INCREMENT,
+    car_ativo ENUM ('S', 'N') NOT NULL DEFAULT 'S' COMMENT 'S => Sim, N => Não',
+    car_data_cad DATETIME NOT NULL,
+    car_nome VARCHAR(150) NOT NULL,
+    PRIMARY KEY(car_id)
+);
+
+CREATE TABLE pessoa (
+    pes_id INT(11) NOT NULL AUTO_INCREMENT,
+    pes_ativo ENUM ('S', 'N') NOT NULL DEFAULT 'S' COMMENT 'S => Sim, N => Não',
+    pes_data_cad DATETIME NOT NULL,
+    pes_nome VARCHAR(150) NOT NULL,
+    pes_cpf VARCHAR(11) NOT NULL,
+    pes_nascimento DATE NOT NULL,
+    emp_id INT(11) NULL,
+    car_id INT(11) NULL,
+    PRIMARY KEY(pes_id),
+    CONSTRAINT fk_empresa_pessoa FOREIGN KEY (emp_id) REFERENCES empresa (emp_id),
+    CONSTRAINT fk_cargo_pessoa FOREIGN KEY (car_id) REFERENCES cargo (car_id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+);
