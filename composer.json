@@ -8,5 +8,8 @@
       "email": "carlos12antoni@gmail.com"
     }
   ],
-  "require": {}
+  "require": {},
+  "autoload": {
+    "classmap": ["src/Controllers", "src/Models", "src/Core"]
+  }
 }
