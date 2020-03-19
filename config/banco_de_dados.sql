@@ -1,4 +1,4 @@
-CREATE TABLE framework_mvc_php;
+CREATE DATABASE framework_mvc_php;
 
 USE framework_mvc_php;
 
