@@ -62,7 +62,7 @@ class AbstractController
      */
     public function paginaInicial()
     {
-        $this->view('Inicio');
+        $this->view('index');
     }
 
     /**
